@@ -204,7 +204,7 @@ def on_message(ws, message):
                     elif 'testAI绘图' in content['text']:
                         gjc=content['text'][31:-1]
                         print('关键词:',gjc)
-                        htmessage=requests.get('https://api.lolimi.cn/api/ai/mj1?key=sWlckPY0hlgaDryj7hnLewOjTU&msg='+str(gjc), stream=True)
+                        htmessage=requests.get('https://api.lolimi.cn/api/ai/mj1?key=hnLewOjTU&msg='+str(gjc), stream=True)
                         htmessage=json.loads(htmessage.text)
                         url='https://a1.fanbook.mobi/api/bot/'+lingpai+'/sendMessage'
                         headers = {'content-type':"application/json;charset=utf-8"}
@@ -223,7 +223,7 @@ def on_message(ws, message):
                             print('文本模式回复')
                             print(content['text'])
                             print(content['text'][23:])
-                            chatmessage=requests.get('https://api.lolimi.cn/api/ai/a?key=sWlckPY0hlgaDryj7hnLewOjTU&msg='+content['text'][23:], stream=True)
+                            chatmessage=requests.get('https://api.lolimi.cn/api/ai/a?key=nLewOjTU&msg='+content['text'][23:], stream=True)
                             chatmessage=json.loads(chatmessage.text)
                             print(chatmessage)
                             url='https://a1.fanbook.mobi/api/bot/'+lingpai+'/sendMessage'
@@ -241,9 +241,9 @@ def on_message(ws, message):
                             print(content['text'])
                             print(content['text'][23:])
                             if xz == '':
-                                chatmessage=requests.get('https://api.lolimi.cn/api/ai/ya?key=sWlckPY0hlgaDryj7hnLewOjTU&msg='+content['text'][23:], stream=True)
+                                chatmessage=requests.get('https://api.lolimi.cn/api/ai/ya?key=7hnLewOjTU&msg='+content['text'][23:], stream=True)
                             else:
-                                chatmessage=requests.get('https://api.lolimi.cn/api/ai/ya?key=sWlckPY0hlgaDryj7hnLewOjTU&msg='+content['text'][23:]+'&speaker='+xz, stream=True)
+                                chatmessage=requests.get('https://api.lolimi.cn/api/ai/ya?key=LewOjTU&msg='+content['text'][23:]+'&speaker='+xz, stream=True)
                             chatmessage=json.loads(chatmessage.text)
                             print(chatmessage)
                             print(chatmessage['data']['output'])
